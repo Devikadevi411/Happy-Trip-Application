@@ -13,8 +13,14 @@ public class User {
     private String username;
 
     private String password;
+    
+    private String gender;
+    
+    private String dob;
 
-    @Transient
+   
+
+	@Transient
     private String passwordConfirm;
 
     @ManyToMany
@@ -47,6 +53,21 @@ public class User {
     public String getPasswordConfirm() {
         return passwordConfirm;
     }
+    public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
 
     public void setPasswordConfirm(String passwordConfirm) {
         this.passwordConfirm = passwordConfirm;
