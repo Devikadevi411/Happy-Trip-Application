@@ -41,34 +41,8 @@
                     <form:errors path="passwordConfirm"></form:errors>
                 </div>
             </spring:bind>
-            <spring:bind path="dob">
-                <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <form:input type="date" name="begin" 
-                    placeholder="dd-mm-yyyy" value=""
-                    min="1997-01-01" max="2030-12-31" path="dob" class="form-control" ></form:input>
-                    <form:errors path="dob"></form:errors>
-                </div>
-            </spring:bind>
 
-            <spring:bind path="gender">
-                <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <form>
-                        <p>Please select your gender :</p>
-                        <div>
-                          <input type="radio" id="contactChoice1"
-                           name="gender" value="female">
-                          <label for="contactChoice1">female</label>
-                      
-                          <input type="radio" id="contactChoice2"
-                           name="gender" value="male">
-                          <label for="contactChoice2">male</label>
-                        </div>
-                        
-                      </form>
-                    <form:errors path="gender"></form:errors>
-                </div>
-            </spring:bind>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 300px; margin: 0 auto">Submit</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </form:form>
 
     </div>
