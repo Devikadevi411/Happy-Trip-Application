@@ -50,6 +50,15 @@ public class FlightApi {
 		(repository1.findByAirlineCode(airlineCode).get(), HttpStatus.OK);
 		}
 		
+		/*
+		@GetMapping("/findByPriceOrName")
+		public ResponseEntity<List<Product>> findProductsByPriceOrName
+		(@RequestParam("price") Optional<Double> price,
+				@RequestParam("productName") Optional<String> productName){
+			return new ResponseEntity<List<Product>>
+		(repository.findByProductNameOrPrice(productName.orElse(""), price.orElse(0.0)).get(), HttpStatus.OK);
+		}*/
+		
 		// http://localhost:8080/api/v1/products/findByPriceOrName?price=
 		@GetMapping("/findByAirlineCodeOrderByFlightName")
 		public ResponseEntity<List<FlightNew>> findByOrderByFlightName
@@ -57,7 +66,7 @@ public class FlightApi {
 			return new ResponseEntity<List<FlightNew>>
 		(repository1.findAll(Sort.by("flightName")), HttpStatus.OK);
 		}
-	
+		
 	// http://localhost:8080/api/v1/products
 		
 	@PostMapping
@@ -74,10 +83,10 @@ public class FlightApi {
 			HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/{flightNumber}")
-	public ResponseEntity<FlightNew> findByFlightNumber(@PathVariable("flightNumber") Integer flightNumber){
+	@GetMapping("/{airlineCode}")
+	public ResponseEntity<FlightNew> findById(@PathVariable("airlineCode") Integer airlineCode){
 		
-return new ResponseEntity<FlightNew>(repository1.findByFlightNumber(flightNumber).get(), HttpStatus.OK);
+return new ResponseEntity<FlightNew>(repository1.findById(airlineCode).get(), HttpStatus.OK);
 	}
 	
 	// http://localhost:8080/api/v1/products/1
