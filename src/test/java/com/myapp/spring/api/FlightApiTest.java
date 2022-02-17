@@ -79,7 +79,7 @@ public class FlightApiTest {
 		
 		
 	}
-	
+/*	
 	@Test
 	@DisplayName("Test All Products /api/v1/products/")
 	public void testGetAllProducts() throws Exception {
@@ -150,6 +150,7 @@ public class FlightApiTest {
 		/*doReturn(Optional.of(products)).when(repository)
 		.findByPriceGreaterThanEqual(price);
 		*/
+	/*	
 		// Perform GET Request
 		
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/products/findByPrice/{price}",price))
@@ -208,7 +209,7 @@ public class FlightApiTest {
 		
 		// Perform GET Request
 		
-		
+/*		
 		mockMvc.perform(MockMvcRequestBuilders
 				.get("/api/v1/products/findByPriceOrName")
 				.queryParam("productName",productName)
@@ -311,6 +312,5 @@ public class FlightApiTest {
 		
 		
 	}
-	
-
+	*/
 }

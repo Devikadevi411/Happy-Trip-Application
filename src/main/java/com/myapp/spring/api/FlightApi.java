@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myapp.spring.model.FlightNew;
+import com.myapp.spring.model.Product;
 import com.myapp.spring.repository.FlightRepository;
 
 
@@ -73,6 +74,11 @@ public class FlightApi {
 			HttpStatus.CREATED);
 	}
 	
+	@GetMapping("/{flightNumber}")
+	public ResponseEntity<FlightNew> findByFlightNumber(@PathVariable("flightNumber") Integer flightNumber){
+		
+return new ResponseEntity<FlightNew>(repository1.findByFlightNumber(flightNumber).get(), HttpStatus.OK);
+	}
 	
 	// http://localhost:8080/api/v1/products/1
 	/*@GetMapping("/{id}")
