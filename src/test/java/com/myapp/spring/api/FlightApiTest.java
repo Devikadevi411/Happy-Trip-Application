@@ -45,15 +45,15 @@ public class FlightApiTest {
 		
 		// Prepare Mock Product
 		FlightNew flight = new FlightNew( "AirIndia", "Airbus A321", 60);
-		flight.setFlightNumber(60);
+		flight.setAirlineCode(1);
 		
 		// Prepare Mock Service Method
 		
-		doReturn(Optional.of(flight)).when(repository).findById(flight.getFlightNumber());
+		doReturn(Optional.of(flight)).when(repository).findById(flight.getAirlineCode());
 		
 		// Perform GET Request
 		
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/flights/{flightNumber}",60))
+		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/flights/{airlineCode}",1))
 		// Validate Status should be 200 OK and JSON response received
 		.andExpect(status().isOk())
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -79,7 +79,7 @@ public class FlightApiTest {
 		
 		
 	}
-	
+/*	
 	@Test
 	@DisplayName("Test All Products /api/v1/products/")
 	public void testGetAllProducts() throws Exception {
@@ -150,6 +150,7 @@ public class FlightApiTest {
 		/*doReturn(Optional.of(products)).when(repository)
 		.findByPriceGreaterThanEqual(price);
 		*/
+	/*	
 		// Perform GET Request
 		
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/products/findByPrice/{price}",price))
@@ -208,7 +209,7 @@ public class FlightApiTest {
 		
 		// Perform GET Request
 		
-		
+/*		
 		mockMvc.perform(MockMvcRequestBuilders
 				.get("/api/v1/products/findByPriceOrName")
 				.queryParam("productName",productName)
@@ -311,6 +312,5 @@ public class FlightApiTest {
 		
 		
 	}
-	
-
+	*/
 }
