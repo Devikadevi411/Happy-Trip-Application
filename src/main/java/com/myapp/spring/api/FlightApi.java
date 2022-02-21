@@ -34,34 +34,22 @@ public class FlightApi {
 	@Autowired
 	private FlightRepository repository1;
 	
-	// http://localhost:8080/api/v1/products
+	// http://localhost:8080/api/v1/flights
 	@GetMapping
 	public ResponseEntity<List<FlightNew>> findAll(){
 		
 	return new ResponseEntity<List<FlightNew>>(repository1.findAll(), HttpStatus.OK);
 	}
 	
-	// http://localhost:8080/api/v1/products/45000
-		@GetMapping("/findByAirlineCode/{airlineCode}")
-		public ResponseEntity<List<FlightNew>> findFlightsByAirlineCode
-		(@PathVariable("airlineCode") Integer airlineCode){
-			
-		return new ResponseEntity<List<FlightNew>>
-		(repository1.findByAirlineCode(airlineCode).get(), HttpStatus.OK);
-		}
+	@GetMapping("/{id}")
+	public ResponseEntity<FlightNew> findById(@PathVariable("id") Integer id){
 		
-		/*
-		@GetMapping("/findByPriceOrName")
-		public ResponseEntity<List<Product>> findProductsByPriceOrName
-		(@RequestParam("price") Optional<Double> price,
-				@RequestParam("productName") Optional<String> productName){
-			return new ResponseEntity<List<Product>>
-		(repository.findByProductNameOrPrice(productName.orElse(""), price.orElse(0.0)).get(), HttpStatus.OK);
-		}*/
-		
-		// http://localhost:8080/api/v1/products/findByPriceOrName?price=
-		@GetMapping("/findByAirlineCodeOrderByFlightName")
-		public ResponseEntity<List<FlightNew>> findByOrderByFlightName
+		return new ResponseEntity<FlightNew>(repository1.findById(id).get(), HttpStatus.OK);
+	}
+	
+	// http://localhost:8080/api/v1/products/sortByFlightName
+		@GetMapping("/sortByFlightName")
+		public ResponseEntity<List<FlightNew>> findByFlightName
 		(){
 			return new ResponseEntity<List<FlightNew>>
 		(repository1.findAll(Sort.by("flightName")), HttpStatus.OK);
@@ -75,7 +63,7 @@ public class FlightApi {
 	return new ResponseEntity<FlightNew>(repository1.save(flight), HttpStatus.CREATED);
 	}
 	
-	@PostMapping("/bulk")
+	/*@PostMapping("/bulk")
 	public ResponseEntity<List<FlightNew>> bulkFlightsInsert
 	(@RequestBody List<FlightNew> flights){
 		
@@ -83,47 +71,22 @@ public class FlightApi {
 			HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/{airlineCode}")
-	public ResponseEntity<FlightNew> findById(@PathVariable("airlineCode") Integer airlineCode){
-		
-return new ResponseEntity<FlightNew>(repository1.findById(airlineCode).get(), HttpStatus.OK);
-	}
+	*/
 	
 	// http://localhost:8080/api/v1/products/1
-	/*@GetMapping("/{id}")
-	public ResponseEntity<FlightNew> findById(@PathVariable("id") Integer id){
-		
-return new ResponseEntity<FlightNew>(repository.findById(id).get(), HttpStatus.OK);
-	}*/
+	
 
 	
-	/*@PutMapping("/{id}")
-	public ResponseEntity<FlightNew> updateProduct(@PathVariable("id") Integer id,
+	@PutMapping("/{id}")
+	public ResponseEntity<FlightNew> updateFlight(@PathVariable("id") Integer id,
 			@RequestBody FlightNew flight) throws ResourceNotFoundException{
-		FlightNew existingProduct = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException
-	    		   ("Product not found for this id :: " + id));
+		FlightNew existingFlight = repository1.findById(id).orElseThrow(() -> new ResourceNotFoundException
+	    		   ("Flight not found for this code :: " + id));
 		
-		BeanUtils.copyProperties(flight, existingProduct);
+		BeanUtils.copyProperties(flight, existingFlight);
 		
-	return new ResponseEntity<FlightNew>(repository.save(existingProduct), 
+	return new ResponseEntity<FlightNew>(repository1.save(existingFlight), 
 			HttpStatus.CREATED);
-	}
-	
-	
-	@DeleteMapping("/{id}")
-	public Map<String, Boolean> delete(@PathVariable(value = "id") Integer id)
-	  throws ResourceNotFoundException {
-		FlightNew flight = repository.findById(id)
-	       .orElseThrow(() -> new ResourceNotFoundException
-	    		   ("Product not found for this id :: " + id));
-
-	    repository.delete(flight);
-	     Map<String, Boolean> response = new HashMap<>();
-	     response.put("deleted", Boolean.TRUE);
-	     return response;
-	}
-*/
-	
-	
+	}	
 
 }
