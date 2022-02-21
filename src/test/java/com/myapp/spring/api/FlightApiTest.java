@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -198,7 +199,7 @@ public class FlightApiTest {
 	
 	
 	
-	/*
+	
 	@Test
 	@DisplayName("Test All Products /api/v1/products/")
 	public void testGetAllFlightsSort() throws Exception {
@@ -218,7 +219,7 @@ public class FlightApiTest {
 		
 		//doReturn(Optional.of(flight1)).when(repository).findById(flight1.getAirlineCode());
 		//doReturn(Optional.of(flight2)).when(repository).findById(flight2.getAirlineCode());
-		doReturn(Optional.of(flights)).when(repository).findAll(Sort.by(flight1.getFlightName(),flight2.getFlightName()));
+		doReturn((flights)).when(repository).findAll(Sort.by("flightName"));
 		
 		// Perform GET Request
 		
@@ -243,7 +244,7 @@ public class FlightApiTest {
 		
 		
 	}
-	*/
+	
 	
 /*	
 	
