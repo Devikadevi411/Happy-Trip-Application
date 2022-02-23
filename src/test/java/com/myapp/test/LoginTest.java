@@ -1,4 +1,4 @@
-package com.myapp.spring.api;
+package com.myapp.test;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,23 +16,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LoginTest {
 	
 	@Test
-	public void login() {
+	public void login() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\drivers\\chromedriver_win32\\chromedriver.exe");
 	WebDriver driver=new ChromeDriver();
 	
 	driver.get("http://127.0.0.1:8888");
-	WebElement Username=driver.findElement(By.id("username"));
-	WebElement password=driver.findElement(By.id("password"));
-	WebElement login=driver.findElement(By.name("commit"));
+	WebElement Username=driver.findElement(By.name("username"));
+	WebElement password=driver.findElement(By.name("password"));
+	WebElement login=driver.findElement(By.xpath("//button[text()='Log In']"));
 	Username.sendKeys("admin1234");
 	password.sendKeys("admin1234");
-	login.click();
+	Thread.sleep(500);
+	login.submit();
 	String actualUrl="http://127.0.0.1:8888";
 	String expectedUrl= driver.getCurrentUrl();
-	assertEquals(actualUrl,expectedUrl);
+	assertEquals(expectedUrl,actualUrl);
 	
-	 String expectedTitle = "Welcome";
+	 String expectedTitle = "Log in with your account";
      String actualTitle = driver.getTitle();
      assertEquals(actualTitle, expectedTitle);
 	
@@ -49,15 +50,7 @@ public class LoginTest {
 	
 	
 
-	// Validation that Alert comes with WELCOME as text on it
-			Alert alert=driver.switchTo().alert();
-			assertEquals("WELCOME", alert.getText());
-			
-			// Validation username and password is wrong that Alert comes with your username and 
-		    // password is invalid as text on it
-			
-			assertEquals("UserName And Password Is Invalid", alert.getText());
-			alert.accept();
+	
 	
 	}
 
@@ -65,4 +58,5 @@ public class LoginTest {
 		// TODO Auto-generated method stub
 		
 	}
-	}
+
+}
