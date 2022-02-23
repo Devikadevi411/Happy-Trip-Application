@@ -1,4 +1,4 @@
-/*package com.myapp.spring.repository;
+package com.myapp.spring.repository;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.myapp.spring.model.Product;
+import com.myapp.spring.model.Registration;
+
 
 @SpringBootTest
 public class RegistrationRepositoryTest {
@@ -30,9 +31,9 @@ public class RegistrationRepositoryTest {
 	@BeforeEach
 	public void setUp() throws JsonParseException, JsonMappingException, IOException {
 		
-		Registration regdetails[]=new ObjectMapper().readValue(DATA_JSON, regdetails[].class);
+		Registration Registrationdetails[]=new ObjectMapper().readValue(DATA_JSON, Registration[].class);
 	// save each product to database
-	Arrays.stream(Registration).forEach(repository::save);	
+	Arrays.stream(Registrationdetails).forEach(repository::save);	
 		
 		
 	}
@@ -43,62 +44,62 @@ public class RegistrationRepositoryTest {
 		
 	}
 	
-	@Test
-	@DisplayName("Test product not found for a non existing id")
-	public void testProductNotFoundForNonExistingId() {
+	 @Test
+	@DisplayName("Test regdeatils found for a non existing emilid")
+	public void testRegistrationFoundFornonExistingemailId() {
 		
 		// given three products in the database
 		
 		// when we retrieve a product using non existing id
-		Registration reg1=repository.findById(100).orElseGet(()-> new reg1());
+		Registration Registrationdetails=repository.findById("abcd@gmail.com").orElseGet(()-> new Registration());
 		
 		// Then perform Assert Conditions To validate
-		Assertions.assertNull(reg1.getProductId(), 
-				"Product With Id 100 should not exist");
+		Assertions.assertNull(Registrationdetails.getEmailId(), 
+				"Product With emailId ");
 		
 		}
 	
 	
 	@Test
 	@DisplayName("Test product saved sucessfully")
-	public void testProductSavedSucessfully() {
+	public void testRegistrationdetialsSavedSucessfully() {
 		
 		// given a mock product
-		Registration reg1 = new reg1("Vivo", "Vivo12Pro", 37545.0, 3.9);
-		reg1.setemailId(5);
+		Registration Registrationdetails = new Registration("devikadevi2704@gmail","27-04-1999","G.Devika","female","devika1234");
+		Registrationdetails.setEmailId("devikadevi2704@gmail.com");
 		
 		// when we retrieve a product using non existing id
-		reg1 savedreg1=repository.save(reg1);
+		Registration savedRegistrationdetails=repository.save(Registrationdetails);
 		
 		// Then perform Assert Conditions To validate
-		Assertions.assertNotNull(savedreg1, 
+		Assertions.assertNotNull(savedRegistrationdetails, 
 				"New Product should be saved");
 		
-		Assertions.assertNotNull(savedreg1.getProductId(), 
-				"New Product should have id");
-		Assertions.assertEquals(product.getProductName(), 
-				savedreg1.getProductName());
+		Assertions.assertNotNull(savedRegistrationdetails.getEmailId(), 
+				"New Product should have emailId");
+		Assertions.assertEquals(Registrationdetails.getFullName(), 
+				savedRegistrationdetails.getFullName());
 		
 		
 		}
 	
-	@Test
+	/* @Test
 	@DisplayName("Test product updated sucessfully")
 	public void testProductUpdatedSucessfully() {
 		
 		// given a mock product
-		Registration reg1 = new Registration("devikadevi","female","27-04-1999","devika","1244545");
-		reg1.setProductId(1);
+		Registration Registrationdetails = new Registration("devikadevi2704@gmail","27-04-1999","G.Devika","female","devika1234");
+		Registrationdetails.setEmailId("devikadevi2704@gmail.com");
 		
 		// when we retrieve a product using non existing id
-		Product updatedProduct=repository.save(reg1);
+		Registration updatedRegistrationdetails=repository.save(Registrationdetails);
 		
 		
-		Assertions.assertEquals(reg1.getPrice(), 
-				updatedProduct.getPrice());
+		Assertions.assertEquals(Registrationdetails.getEmailId(), 
+				updatedRegistrationdetails.getEmailId());
 		
 		
-		}
+		}*/
 	
 
-}*/
+}

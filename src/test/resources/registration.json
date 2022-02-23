@@ -1,13 +1,11 @@
 [
 	
 {
-
-"fullName":"G.Devika",		
 "emailId" :"devikadevi2704@gmail.com",
-"password":"devika1234", 
+"dateOfBirth":"27-04-1999",
+"fullName":"G.Devika",
 "gender":"female",
-"dateOfBirth":"27-04-1999"
-
+"password":"devika1234"
 }
 
 ]
