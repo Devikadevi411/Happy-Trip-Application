@@ -18,7 +18,7 @@ public interface FlightRepository extends JpaRepository<FlightNew, Integer> {
 	
 	Optional<List<FlightNew>> findByAirlineCode(Integer airlineCode);
 	
-	//Optional<List<FlightNew>> findByAirlineCodeOrderByFlightName(String flightName);
+	Optional<List<FlightNew>> findByFlightName(String flightName);
 
 	//Optional<List<FlightNew>> findByProductNameLike(String productName);
 	

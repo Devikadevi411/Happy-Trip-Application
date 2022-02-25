@@ -15,21 +15,18 @@
 
 {
 
+"airlineCode":2,
 
+"airlineName":"SpiceJet",
 
+"flightName":"Boeing B321",
 
-
-
-},
-
-{
-
-
-
+"flightNumber":40
 
 
 
 
 }
+
 
 ]
