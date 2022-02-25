@@ -12,4 +12,4 @@ public class HappyTripApplication {
 		SpringApplication.run(HappyTripApplication.class, args);
 	}
 
-}
+} 
