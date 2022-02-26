@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.cors().and().csrf().disable()
             .authorizeRequests()
                 .antMatchers("/css/**", "/js/**", "/registration").permitAll()
                 .anyRequest().authenticated()
@@ -38,6 +38,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .logout()
                 .permitAll();
     }
+    
+    /* 
+    
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.cors().and().csrf().disable()
+            .authorizeRequests()
+                .antMatchers("/resources/**", "/registration").permitAll()
+    
+     */
 
     @Bean
     public AuthenticationManager customAuthenticationManager() throws Exception {
