@@ -1,0 +1,26 @@
+[
+	 {
+    "emailId": "devikadevi2704@gmail.com",
+    "fullName": "Gandu devika",
+    "gender": "female",
+    "dateOfBirth": "27-04-1999",
+    "address": "2-177,chilukur",
+    "city": "kodad",
+    "state": "Telangana",
+    "country": "India",
+    "pinCode": "508206",
+    "phoneNumber": "7287915453"
+  },
+  {
+    "emailId": "gowthamikummara99@gmail.com",
+    "fullName": "GowthamiKummara",
+    "gender": "female",
+    "dateOfBirth": "02-05-1999",
+    "address": "Palamaner",
+    "city": "Chittoor",
+    "state": "AndraPradesh",
+    "country": "India",
+    "pinCode": "517408",
+    "phoneNumber": "6309648757"
+  }
+]
