@@ -44,10 +44,10 @@ public class RegistrationApi {
 			(repository.findByEmailId(emailId).get(), HttpStatus.OK);
 			}
 			*/
-			@GetMapping("/{emailId}")
-		    public ResponseEntity<Registration> findById(@PathVariable("emailId") String emailId){
+			@GetMapping("/{emailId1}")
+		    public ResponseEntity<Registration> findById(@PathVariable("emailId1") String emailId1){
 		        
-		return new ResponseEntity<Registration>(repository.findById(emailId).get(), HttpStatus.OK);
+		return new ResponseEntity<Registration>(repository.findById(emailId1).get(), HttpStatus.OK);
 		    }
 			/*
 			// http://localhost:8080/api/v1/products/findByPriceOrName?price=

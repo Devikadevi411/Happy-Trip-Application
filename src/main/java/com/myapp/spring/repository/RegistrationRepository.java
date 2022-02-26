@@ -16,7 +16,7 @@ public interface RegistrationRepository extends JpaRepository<Registration, Stri
 	// select * from devopsproducts where UPPER(productName) = UPPER(?1)
 //Optional<List<Product>> findByPriceGreaterThanEqual(Double price);
 	
-	Optional<List<Registration>> findByEmailId(String emailId);
+	Optional<List<Registration>> findByEmailId(String emailId1);
 
 	//Optional<List<Registration>> findByMailId(String emailId);
 	
