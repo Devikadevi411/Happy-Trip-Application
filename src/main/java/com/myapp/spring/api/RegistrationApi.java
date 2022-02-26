@@ -36,13 +36,14 @@ public class RegistrationApi {
 		}
 		
 		// http://localhost:8080/api/v1/products/45000
-			@GetMapping("/findByEmailId/{emailId}")
+			/*@GetMapping("/findByEmailId/{emailId}")
 			public ResponseEntity<List<Registration>> findUserByEmailId
 			(@PathVariable("emailId") String emailId){
 				
 			return new ResponseEntity<List<Registration>>
 			(repository.findByEmailId(emailId).get(), HttpStatus.OK);
 			}
+			*/
 			@GetMapping("/{emailId}")
 		    public ResponseEntity<Registration> findById(@PathVariable("emailId") String emailId){
 		        
