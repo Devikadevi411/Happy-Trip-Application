@@ -14,21 +14,21 @@ import javax.persistence.Table;
 public class Registration {
 
 	@Id
-	@Column(name = "email_id1",nullable = false)
+	@Column(name = "email_id",nullable = false)
 	//@GeneratedValue(strategy = GenerationType.AUTO)
-	private String emailId1;
+	private String emailId;
 	
-	@Column(name = "password1",nullable = false)
-	private String password1;
+	@Column(name = "password",nullable = false)
+	private String password;
 	
-	@Column(name = "full_name1",nullable = false)
-	private String fullName1;
+	@Column(name = "full_name",nullable = false)
+	private String fullName;
 	
-	@Column(name = "gender1",nullable = false)
-	private String gender1;
+	@Column(name = "gender",nullable = false)
+	private String gender;
 	
-	@Column(name = "date_of_birth1",nullable = false)
-	private String dateOfBirth1;
+	@Column(name = "date_of_birth",nullable = false)
+	private String dateOfBirth;
 
 	public Registration() {
 		super();
@@ -37,56 +37,56 @@ public class Registration {
 
 	public Registration(String emailId, String password, String fullName, String gender, String dateOfBirth) {
 		super();
-		this.emailId1 = emailId;
-		this.password1 = password;
-		this.fullName1 = fullName;
-		this.gender1 = gender;
-		this.dateOfBirth1 = dateOfBirth;
+		this.emailId = emailId;
+		this.password = password;
+		this.fullName = fullName;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getEmailId() {
-		return emailId1;
+		return emailId;
 	}
 
 	public void setEmailId(String emailId) {
-		this.emailId1 = emailId;
+		this.emailId = emailId;
 	}
 
 	public String getPassword() {
-		return password1;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		this.password1 = password;
+		this.password = password;
 	}
 
 	public String getFullName() {
-		return fullName1;
+		return fullName;
 	}
 
 	public void setFullName(String fullName) {
-		this.fullName1 = fullName;
+		this.fullName = fullName;
 	}
 
 	public String getGender() {
-		return gender1;
+		return gender;
 	}
 
 	public void setGender(String gender) {
-		this.gender1 = gender;
+		this.gender = gender;
 	}
 
 	public String getDateOfBirth() {
-		return dateOfBirth1;
+		return dateOfBirth;
 	}
 
 	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth1 = dateOfBirth;
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(dateOfBirth1, emailId1, fullName1, gender1, password1);
+		return Objects.hash(dateOfBirth, emailId, fullName, gender, password);
 	}
 
 	@Override
@@ -98,9 +98,9 @@ public class Registration {
 		if (getClass() != obj.getClass())
 			return false;
 		Registration other = (Registration) obj;
-		return Objects.equals(dateOfBirth1, other.dateOfBirth1) && Objects.equals(emailId1, other.emailId1)
-				&& Objects.equals(fullName1, other.fullName1) && Objects.equals(gender1, other.gender1)
-				&& Objects.equals(password1, other.password1);
+		return Objects.equals(dateOfBirth, other.dateOfBirth) && Objects.equals(emailId, other.emailId)
+				&& Objects.equals(fullName, other.fullName) && Objects.equals(gender, other.gender)
+				&& Objects.equals(password, other.password);
 	}
 	
 	
@@ -108,15 +108,15 @@ public class Registration {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Registration [emailId1=");
-		builder.append(emailId1);
+		builder.append(emailId);
 		builder.append(", password=");
-		builder.append(password1);
+		builder.append(password);
 		builder.append(", fullName=");
-		builder.append(fullName1);
+		builder.append(fullName);
 		builder.append(", gender=");
-		builder.append(gender1);
+		builder.append(gender);
 		builder.append(", dateOfBirth=");
-		builder.append(dateOfBirth1);
+		builder.append(dateOfBirth);
 		builder.append("]");
 		return builder.toString();
 	}

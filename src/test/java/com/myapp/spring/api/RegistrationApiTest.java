@@ -52,7 +52,7 @@ public class RegistrationApiTest {
 		
 		// Perform GET Request
 		
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/reg/{emailId1}","devikadevi2704@gmail.com"))
+		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/reg/{emailId}","devikadevi2704@gmail.com"))
 		// Validate Status should be 200 OK and JSON response received
 		.andExpect(status().isOk())
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -70,11 +70,11 @@ public class RegistrationApiTest {
 		
 		// "starRating":4.5}
 		
-		.andExpect(jsonPath("$.emailId1", is("devikadevi2704@gmail.com")))
-		.andExpect(jsonPath("$.dateOfBirth1", is("27-04-1999")))
-		.andExpect(jsonPath("$.fullName1", is("G.Devika")))
-		.andExpect(jsonPath("$.gender1", is("female")))
-		.andExpect(jsonPath("$.password1", is("devika1234")));
+		.andExpect(jsonPath("$.emailId", is("devikadevi2704@gmail.com")))
+		.andExpect(jsonPath("$.dateOfBirth", is("27-04-1999")))
+		.andExpect(jsonPath("$.fullName", is("G.Devika")))
+		.andExpect(jsonPath("$.gender", is("female")))
+		.andExpect(jsonPath("$.password", is("devika1234")));
 		
 		
 	}
@@ -109,11 +109,11 @@ public class RegistrationApiTest {
 		// Validate Response Body
 		.andExpect(status().isCreated())
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-		.andExpect(jsonPath("$.emailId1", is("devikadevi2704@gmail.com")))
-		.andExpect(jsonPath("$.dateOfBirth1", is("27-04-1999")))
-		.andExpect(jsonPath("$.fullName1", is("G.Devika")))
-		.andExpect(jsonPath("$.gender1", is("female")))
-		.andExpect(jsonPath("$.password1", is("devika1234")));
+		.andExpect(jsonPath("$.emailId", is("devikadevi2704@gmail.com")))
+		.andExpect(jsonPath("$.dateOfBirth", is("27-04-1999")))
+		.andExpect(jsonPath("$.fullName", is("G.Devika")))
+		.andExpect(jsonPath("$.gender", is("female")))
+		.andExpect(jsonPath("$.password", is("devika1234")));
 		
 		
 	}
