@@ -1,6 +1,9 @@
 [
 	 {
     "emailId": "devikadevi2704@gmail.com",
+    "fullName":"Devika G",
+    "gender": "female",
+    "dateOfBirth":"27-04-1999",
     "address": "2-177,chilukur",
     "city": "kodad",
     "state": "Telangana",
@@ -10,6 +13,9 @@
   },
   {
     "emailId": "gowthamikummara99@gmail.com",
+    "fullName":"Gowthami Kummara",
+    "gender": "female",
+    "dateOfBirth":"02-05-1999",
     "address": "Palamaner",
     "city": "Chittoor",
     "state": "AndraPradesh",

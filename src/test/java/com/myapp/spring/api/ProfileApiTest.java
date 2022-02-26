@@ -42,7 +42,7 @@ public class ProfileApiTest {
 	public void testGetProfiledetailsByemailId() throws Exception {
 		
 		// Prepare Mock Profiledetails
-		Profile profiledetails = new Profile("gowthamikummara99@gmail.com","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
+		Profile profiledetails = new Profile("gowthamikummara99@gmail.com","Gowthami Kummara","female","02-05-1999","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
 		profiledetails.setEmailId("gowthamikummara99@gmail.com");
 		
 		// Prepare Mock Service Method
@@ -70,9 +70,9 @@ public class ProfileApiTest {
 		// "starRating":4.5}
 		
 		.andExpect(jsonPath("$.emailId", is("gowthamikummara99@gmail.com")))
-		//.andExpect(jsonPath("$.fullName", is("GowthamiKummara")))
-		//.andExpect(jsonPath("$.gender", is("female")))
-		//.andExpect(jsonPath("$.dateOfBirth", is("02-05-1999")))
+		.andExpect(jsonPath("$.fullName", is("Gowthami Kummara")))
+		.andExpect(jsonPath("$.gender", is("female")))
+		.andExpect(jsonPath("$.dateOfBirth", is("02-05-1999")))
 		.andExpect(jsonPath("$.address", is("Palamaner")))
 		.andExpect(jsonPath("$.city", is("Chittoor")))
 		.andExpect(jsonPath("$.state", is("AndhraPradesh")))
@@ -249,9 +249,9 @@ public class ProfileApiTest {
 	public void testAddNewProfiledetails() throws Exception {
 		
 		// Prepare Mock Profiledetails
-		Profile newProfiledetails= new Profile ("gowthamikummara99@gmail.com","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
+		Profile newProfiledetails= new Profile ("gowthamikummara99@gmail.com","Gowthami Kummara","female","02-05-1999","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
 		
-		Profile  mockProfiledetails = new Profile ("gowthamikummara99@gmail.com","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
+		Profile  mockProfiledetails = new Profile ("gowthamikummara99@gmail.com","Gowthami Kummara","female","02-05-1999","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
 		mockProfiledetails.setEmailId("gowthamikummara99@gmail.com");
 		// Prepare Mock Service Method
 		
@@ -270,9 +270,9 @@ public class ProfileApiTest {
 		.andExpect(status().isCreated())
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 		.andExpect(jsonPath("$.emailId", is("gowthamikummara99@gmail.com")))
-		//.andExpect(jsonPath("$.fullName", is("GowthamiKummara")))
-		//.andExpect(jsonPath("$.gender", is("female")))
-		//.andExpect(jsonPath("$.dateOfBirth", is("02-05-1999")))
+		.andExpect(jsonPath("$.fullName", is("Gowthami Kummara")))
+		.andExpect(jsonPath("$.gender", is("female")))
+		.andExpect(jsonPath("$.dateOfBirth", is("02-05-1999")))
 		.andExpect(jsonPath("$.address", is("Palamaner")))
 		.andExpect(jsonPath("$.city", is("Chittoor")))
 		.andExpect(jsonPath("$.state", is("AndhraPradesh")))
@@ -289,9 +289,9 @@ public class ProfileApiTest {
 		
 		// Prepare Mock Profiledetails
 		
-		Profile mockProfiledetails = new Profile("gowthamikummara99@gmail.com","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
+		Profile mockProfiledetails = new Profile("gowthamikummara99@gmail.com","Gowthami Kummara","female","08-05-1999","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
 		
-		Profile ProfiledetailsToBeUpdated = new Profile("gowthamikummara99@gmail.com","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
+		Profile ProfiledetailsToBeUpdated = new Profile("gowthamikummara99@gmail.com","Gowthami Kummara","female","08-05-1999","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
 		ProfiledetailsToBeUpdated.setEmailId("gowthamikummara99@gmail.com");
 		
 		
@@ -315,9 +315,9 @@ public class ProfileApiTest {
 		.andExpect(status().isCreated())
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 		.andExpect(jsonPath("$.emailId", is("gowthamikummara99@gmail.com")))
-		//.andExpect(jsonPath("$.fullName", is("GowthamiKummara")))
-		//.andExpect(jsonPath("$.gender", is("female")))
-		//.andExpect(jsonPath("$.dateOfBirth", is("08-05-1999")))
+		.andExpect(jsonPath("$.fullName", is("Gowthami Kummara")))
+		.andExpect(jsonPath("$.gender", is("female")))
+		.andExpect(jsonPath("$.dateOfBirth", is("08-05-1999")))
 		.andExpect(jsonPath("$.address", is("Palamaner")))
 		.andExpect(jsonPath("$.city", is("Chittoor")))
 		.andExpect(jsonPath("$.state", is("AndhraPradesh")))

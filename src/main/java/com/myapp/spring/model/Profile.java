@@ -18,7 +18,7 @@ public class Profile {
 	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private String emailId;
 	
-	/*
+
 	@Column(name = "full_name",nullable = false)
 	private String fullName;
 	
@@ -27,7 +27,7 @@ public class Profile {
 	
 	@Column(name = "date_of_birth",nullable = false)
 	private String dateOfBirth;
-	*/
+	
 	
 	@Column(name = "address",nullable = false)
 	private String address;
@@ -60,7 +60,7 @@ public class Profile {
 	}
 
 
-/*
+
 	public String getFullName() {
 		return fullName;
 	}
@@ -95,7 +95,7 @@ public class Profile {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-*/
+
 
 	public String getAddress() {
 		return address;
@@ -168,25 +168,9 @@ public class Profile {
 	}
 
 
-	
-	
-	
-	
-public Profile(String emailId, String address, String city, String state, String country, String pinCode,
-			String phoneNumber) {
-		super();
-		this.emailId = emailId;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.country = country;
-		this.pinCode = pinCode;
-		this.phoneNumber = phoneNumber;
-	}
 
 
 
-/*
 	public Profile(String emailId, String fullName, String gender, String dateOfBirth, String address, String city,
 			String state, String country, String pinCode, String phoneNumber) {
 		super();
@@ -202,14 +186,20 @@ public Profile(String emailId, String address, String city, String state, String
 		this.phoneNumber = phoneNumber;
 	}
 
-*/
 
 
 	
 	
 	
 
-/*
+
+	public Profile() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(address, city, country, dateOfBirth, emailId, fullName, gender, phoneNumber, pinCode,
@@ -234,36 +224,11 @@ public Profile(String emailId, String address, String city, String state, String
 				&& Objects.equals(pinCode, other.pinCode) && Objects.equals(state, other.state);
 	}
 
-*/
-
-	public Profile() {
-	super();
-	// TODO Auto-generated constructor stub
-}
 
 
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(address, city, country, emailId, phoneNumber, pinCode, state);
-	}
+	
 
 
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Profile other = (Profile) obj;
-		return Objects.equals(address, other.address) && Objects.equals(city, other.city)
-				&& Objects.equals(country, other.country) && Objects.equals(emailId, other.emailId)
-				&& Objects.equals(phoneNumber, other.phoneNumber) && Objects.equals(pinCode, other.pinCode)
-				&& Objects.equals(state, other.state);
-	}
 
 
 
@@ -272,12 +237,12 @@ public Profile(String emailId, String address, String city, String state, String
 		StringBuilder builder = new StringBuilder();
 		builder.append("Profile [emailId=");
 		builder.append(emailId);
-		//builder.append(", fullName=");
-		//builder.append(fullName);
-		//builder.append(", gender=");
-		//builder.append(gender);
-		//builder.append(", dateOfBirth=");
-		//builder.append(dateOfBirth);
+		builder.append(", fullName=");
+		builder.append(fullName);
+		builder.append(", gender=");
+		builder.append(gender);
+		builder.append(", dateOfBirth=");
+		builder.append(dateOfBirth);
 		builder.append(", address=");
 		builder.append(address);
 		builder.append(", city=");
