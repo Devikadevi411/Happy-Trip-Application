@@ -71,10 +71,10 @@ public class RegistrationApiTest {
 		// "starRating":4.5}
 		
 		.andExpect(jsonPath("$.emailId1", is("devikadevi2704@gmail.com")))
-		.andExpect(jsonPath("$.dateOfBirth", is("27-04-1999")))
-		.andExpect(jsonPath("$.fullName", is("G.Devika")))
-		.andExpect(jsonPath("$.gender", is("female")))
-		.andExpect(jsonPath("$.password", is("devika1234")));
+		.andExpect(jsonPath("$.dateOfBirth1", is("27-04-1999")))
+		.andExpect(jsonPath("$.fullName1", is("G.Devika")))
+		.andExpect(jsonPath("$.gender1", is("female")))
+		.andExpect(jsonPath("$.password1", is("devika1234")));
 		
 		
 	}
@@ -110,10 +110,10 @@ public class RegistrationApiTest {
 		.andExpect(status().isCreated())
 		.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 		.andExpect(jsonPath("$.emailId1", is("devikadevi2704@gmail.com")))
-		.andExpect(jsonPath("$.dateOfBirth", is("27-04-1999")))
-		.andExpect(jsonPath("$.fullName", is("G.Devika")))
-		.andExpect(jsonPath("$.gender", is("female")))
-		.andExpect(jsonPath("$.password", is("devika1234")));
+		.andExpect(jsonPath("$.dateOfBirth1", is("27-04-1999")))
+		.andExpect(jsonPath("$.fullName1", is("G.Devika")))
+		.andExpect(jsonPath("$.gender1", is("female")))
+		.andExpect(jsonPath("$.password1", is("devika1234")));
 		
 		
 	}
