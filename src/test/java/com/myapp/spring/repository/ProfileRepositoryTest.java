@@ -65,7 +65,7 @@ public class ProfileRepositoryTest {
 	public void testProfiledetialsSavedSucessfully() {
 		
 		// given a mock product
-		Profile Profiledetails = new Profile("gowthamikummara99@gmail.com","GowthamiKummara","female","02-05-1999","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
+		Profile Profiledetails = new Profile("gowthamikummara99@gmail.com","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
 		Profiledetails.setEmailId("gowthamikummara99@gmail.com");
 		
 		// when we retrieve a product using non existing id
@@ -77,8 +77,8 @@ public class ProfileRepositoryTest {
 		
 		Assertions.assertNotNull(savedProfiledetails.getEmailId(), 
 				"New Product should have emailId");
-		Assertions.assertEquals(Profiledetails.getFullName(), 
-				savedProfiledetails.getFullName());
+		Assertions.assertEquals(Profiledetails.getPinCode(), 
+				savedProfiledetails.getPinCode());
 		
 		
 		}
@@ -88,7 +88,7 @@ public class ProfileRepositoryTest {
 	public void testProductUpdatedSucessfully() {
 		
 		// given a mock product
-		Profile Profiledetails = new Profile("gowthamikummara99@gmail.com","GowthamiKummara","female","08-05-1999","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
+		Profile Profiledetails = new Profile("gowthamikummara99@gmail.com","Palamaner","Chittoor","AndhraPradesh","India","517408","6309648757");
 		Profiledetails.setEmailId("gowthamikummara99@gmail.com");
 		
 		// when we retrieve a product using non existing id
