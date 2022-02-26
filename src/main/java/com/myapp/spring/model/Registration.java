@@ -107,7 +107,7 @@ public class Registration {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Registration [emailId1=");
+		builder.append("Registration [emailId=");
 		builder.append(emailId);
 		builder.append(", password=");
 		builder.append(password);
