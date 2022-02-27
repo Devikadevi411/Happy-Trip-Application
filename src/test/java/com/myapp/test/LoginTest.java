@@ -21,7 +21,7 @@ public class LoginTest {
 				"C:\\drivers\\chromedriver_win32\\chromedriver.exe");
 	WebDriver driver=new ChromeDriver();
 	
-	driver.get("http://127.0.0.1:8888");
+	driver.get("http://127.0.0.1:6070");
 	WebElement Username=driver.findElement(By.name("username"));
 	WebElement password=driver.findElement(By.name("password"));
 	WebElement login=driver.findElement(By.xpath("//button[text()='Log In']"));
